@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <herd>no-herd</herd>
+  <longdescription lang="en">
+  Installs Chef Client from a self-contained omnibus package (http://www.opscode.com/chef/install/) which eliminates a dependency on system Ruby and Rubygems.
+  </longdescription>
+</pkgmetadata>
