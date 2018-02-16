@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+start() {
+        ebegin "Starting Sonarr"
+        start-stop-daemon -d ${START_DIR} -S -m -p $PID -1 /var/log/sonarr/out.log -2 /var/log/pms/err.log --quiet -u $USER -N -5 -b --exec mono /opt/sonarr/NzbDrone.exe
+        eend $?
+}
+
+stop() {
+        ebegin "Stopping Sonarr"
+        kill -- -`cat /var/run/sonarr.pid`
+        eend $?
+}
+
+restart() {
+        stop
+        sleep 3
+        start
+}
+
