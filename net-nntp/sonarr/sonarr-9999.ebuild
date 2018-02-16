@@ -37,6 +37,7 @@ src_install() {
 	mkdir -p ${D}/opt/sonarr ${D}/etc/sonarr
 	cp -R "${S}/" "${D}/sonarr" || die "Install failed!"
 	newinitd ${FILESDIR}/sonarr.init sonarr
+	newconfd ${FILESDIR}/sonarr.confd sonarr
 	cp ${FILESDIR}/sonarr.conf ${D}/etc/sonarr
 }
 
