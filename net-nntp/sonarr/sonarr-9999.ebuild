@@ -42,5 +42,5 @@ src_install() {
 
 pkg_preinst() {
 	enewgroup sonarr
-	enewuser sonarr -l /bin/false /dev/null sonarr
+	enewuser sonarr -1 /bin/false /dev/null sonarr
 }
