@@ -1,3 +1,0 @@
-[submodule "net-nntp/radarr"]
-	path = net-nntp/radarr
-	url = https://github.com/Kaari/gentoo-radarr.ebuild.git
