@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit dotnet
+inherit dotnet user
 
 SRC_URI="http://download.sonarr.tv/v2/master/mono/NzbDrone.master.tar.gz"
 
@@ -40,7 +40,7 @@ src_install() {
 	cp ${FILESDIR}/sonarr.conf ${D}/etc/sonarr
 }
 
-pkg_setup() {
+pkg_preinst() {
 	enewgroup sonarr
 	enewuser sonarr -l /bin/false /dev/null sonarr
 }
