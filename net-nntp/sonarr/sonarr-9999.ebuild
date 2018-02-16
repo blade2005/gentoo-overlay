@@ -6,7 +6,10 @@ EAPI=6
 
 inherit dotnet
 
+P=NzbDrone
+
 SRC_URI="http://download.sonarr.tv/v2/master/mono/NzbDrone.master.tar.gz"
+
 
 DESCRIPTION="Sonarr is a PVR for Usenet and BitTorrent users."
 HOMEPAGE="https://github.com/Sonarr/Sonarr"
