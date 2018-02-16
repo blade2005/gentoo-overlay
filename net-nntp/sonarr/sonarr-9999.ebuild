@@ -36,9 +36,8 @@ src_unpack() {
 src_install() {
 	mkdir -p ${D}/opt/sonarr ${D}/etc/sonarr
 	cp -R "${S}/" "${D}/sonarr" || die "Install failed!"
-	die "Failing on purpose"
-	newinitd files/sonarr.init sonarr
-	cp files/sonarr.conf ${D}/etc/sonarr
+	newinitd ${FILESDIR}/sonarr.init sonarr
+	cp ${FILESDIR}/sonarr.conf ${D}/etc/sonarr
 }
 
 pkg_setup() {
