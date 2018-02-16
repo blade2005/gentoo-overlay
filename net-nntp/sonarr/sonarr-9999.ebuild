@@ -46,3 +46,7 @@ pkg_preinst() {
 	enewgroup sonarr
 	enewuser sonarr -1 -1 /var/lib/sonarr sonarr
 }
+
+pkg_config() {
+	echo "Visit http://localhost:8989/ in a browser"
+}
