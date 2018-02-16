@@ -2,7 +2,7 @@
 
 start() {
         ebegin "Starting Sonarr"
-        start-stop-daemon -d ${START_DIR} -S -m -p $PID -1 /var/log/sonarr/out.log -2 /var/log/pms/err.log --quiet -u $USER -N -5 -b --exec mono /opt/sonarr/NzbDrone.exe
+        start-stop-daemon -d ${START_DIR} -S -m -p $PID -1 $LOGFILE -2 $LOGFILE --quiet -u $USER -N -5 -b --exec mono /opt/sonarr/NzbDrone.exe
         eend $?
 }
 

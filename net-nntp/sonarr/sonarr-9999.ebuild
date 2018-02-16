@@ -35,7 +35,7 @@ src_unpack() {
 
 src_install() {
 	mkdir -p ${D}/opt/sonarr ${D}/etc/sonarr
-	cp -R "${S}/" "${D}/sonarr" || die "Install failed!"
+	cp -R "${S}/" "${D}/otp/sonarr" || die "Install failed!"
 	newinitd ${FILESDIR}/sonarr.init sonarr
 	newconfd ${FILESDIR}/sonarr.confd sonarr
 	cp ${FILESDIR}/sonarr.conf ${D}/etc/sonarr
@@ -43,5 +43,5 @@ src_install() {
 
 pkg_preinst() {
 	enewgroup sonarr
-	enewuser sonarr -1 -1 /dev/null sonarr
+	enewuser sonarr -1 -1 /var/lib/sonarr sonarr
 }

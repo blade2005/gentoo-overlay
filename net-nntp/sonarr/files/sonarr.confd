@@ -1,3 +1,5 @@
 START_DIR=/opt/sonarr
 PID=/var/run/sonarr.pid
 USER=sonarr
+HOMEDIR=/var/lib/sonarr
+LOGFILE=$HOMEDIR/stdout.log
