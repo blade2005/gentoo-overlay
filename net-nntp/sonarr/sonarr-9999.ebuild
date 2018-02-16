@@ -33,17 +33,6 @@ src_unpack() {
 	mv ${WORKDIR}/NzbDrone ${S}
 }
 
-src_prepare() {
-	mono "${S}/tools/nuget/nuget.exe" restore "${SLNFILE}"
-}
-
-src_compile() {
-	exbuild "${SLNFILE}" /p:AllowedReferenceRelatedFileExtensions=.pdb
-}
-
 src_install() {
-	rm "${S}/src/_output/Newtonsoft.Json.*"
-	cp "${S}/src/packages/Newtonsoft.Json.*/lib/net35/*.dll" "${S}/src/_output"
-	cp "${S}/src/packages/Newtonsoft.Json.*/lib/net35/*.dll" "${S}/src/_output/NzbDrone.Update"
-	egacinstall
+	cp -R "${S}/" "${D}/" || die "Install failed!"
 }
