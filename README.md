@@ -27,3 +27,7 @@ To install:
 echo "app-admin/chef ~amd64" >> /etc/portage/package.keywords
 emerge app-admin/chef
 ```
+
+## net-nntp/radarr
+
+Added radarr as a submodule from https://github.com/Kaari/gentoo-radarr.ebuild.git
