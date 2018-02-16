@@ -6,10 +6,7 @@ EAPI=6
 
 inherit dotnet
 
-P=NzbDrone
-
 SRC_URI="http://download.sonarr.tv/v2/master/mono/NzbDrone.master.tar.gz"
-
 
 DESCRIPTION="Sonarr is a PVR for Usenet and BitTorrent users."
 HOMEPAGE="https://github.com/Sonarr/Sonarr"
@@ -32,6 +29,8 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
+	# Because the tarball has NzbDrone as the root
+	mv ${WORKDIR}/NzbDrone ${S}
 }
 
 src_prepare() {
