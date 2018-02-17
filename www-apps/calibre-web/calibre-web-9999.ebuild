@@ -48,6 +48,7 @@ src_install() {
 	#If the bio-overlay is present then we can skip Wand install
 	#python_foreach_impl python_domodule Wand>=0.4.4
 
+	cp ${FILESDIR}/setup.py ${S}
 	python_foreach_impl python_domodule cps
 
 	newconfd "${FILESDIR}/${PN}.conf" ${PN}
