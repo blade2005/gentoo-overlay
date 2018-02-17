@@ -67,6 +67,10 @@ src_install() {
 
 	python_foreach_impl python_fix_shebang cps.py
 	python_foreach_impl python_newscript cps.py ${PN}
+
+	mkdir -p ${D}/var/log
+	touch ${D}/var/log/${PN}.log
+	fowners ${PN}:${PN} /var/log/${PN}.log
 }
 
 pkg_info() {
