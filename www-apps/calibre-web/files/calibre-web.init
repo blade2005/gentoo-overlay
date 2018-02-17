@@ -6,7 +6,7 @@
 RUN_DIR=/var/run/calibre-web
 PID_FILE=${RUN_DIR}/calibre-web.pid
 
-BINNAME="cps"
+BINNAME="calibre-web"
 
 depend() {
   need net
