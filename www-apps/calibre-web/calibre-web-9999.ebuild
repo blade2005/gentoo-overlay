@@ -44,11 +44,7 @@ pkg_setup() {
 }
 
 src_install() {
-	# TODO: There isn't a gentoo ebuild for wand.
-	#If the bio-overlay is present then we can skip Wand install
-	#python_foreach_impl python_domodule Wand>=0.4.4
-
-	cp ${FILESDIR}/setup.py ${S}
+	cp -v "${FILESDIR}/setup.py" ${S}
 	python_foreach_impl python_domodule cps
 
 	newconfd "${FILESDIR}/${PN}.conf" ${PN}
