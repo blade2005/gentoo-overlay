@@ -31,7 +31,7 @@ DEPEND="
 	>=dev-python/sqlalchemy-0.8.4[${PYTHON_USEDEP}]
 	>=www-servers/tornado-4.1[${PYTHON_USEDEP}]
 	>=dev-python/unidecode-0.04.19[${PYTHON_USEDEP}]
-	>=dev-python/wand-0.4.4[${PYTHON_USEDEP}]
+	>=dev-python/wand-0.4.0[${PYTHON_USEDEP}]
 "
 
 #MY_PN=""
