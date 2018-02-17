@@ -68,3 +68,9 @@ src_install() {
 	python_foreach_impl python_fix_shebang cps.py
 	python_foreach_impl python_newscript cps.py ${PN}
 }
+
+pkg_info() {
+	echo "First start will fail due to default logging file being in the cps directory."
+	echo "Run the following after it failed to start to fix the log directory"
+	echo  sqlite3 /var/lib/calibre-web/settings.db "UPDATE settings SET config_logfile = '/var/log/calibre-web.log' WHERE id = 1;"
+}
