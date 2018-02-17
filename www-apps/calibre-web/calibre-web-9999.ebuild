@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=6
+EAPI=5
 
 PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
 
@@ -44,7 +44,8 @@ pkg_setup() {
 }
 
 src_prepare() {
-	cp -v "${FILESDIR}/setup.py" ${S}
+	cp -v "${FILESDIR}/setup.py" ${S} || die "Failed to copy setup.py"
+	true;
 }
 
 src_install() {
