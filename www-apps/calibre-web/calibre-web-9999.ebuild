@@ -34,9 +34,9 @@ DEPEND="
 	>=dev-python/wand-0.4.0[${PYTHON_USEDEP}]
 "
 
-#MY_PN=""
+#MY_PN="calibre-web"
 
-S=${WORKDIR}/${PN}
+S=${WORKDIR}/${P}
 
 pkg_setup() {
 	enewgroup ${PN}
