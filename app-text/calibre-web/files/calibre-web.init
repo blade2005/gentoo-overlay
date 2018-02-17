@@ -1,0 +1,37 @@
+#!/sbin/openrc-run
+# Copyright 1999-2017 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+
+RUN_DIR=/var/run/calibre-web
+PID_FILE=${RUN_DIR}/calibre-web.pid
+
+BINNAME="cps"
+
+depend() {
+  need net
+}
+
+check_config() {
+  if [ ! -d "${RUN_DIR}" ]; then
+    mkdir "${RUN_DIR}"
+  fi
+
+}
+
+start() {
+
+  check_config
+
+  ebegin "Starting calibre-web"
+  start-stop-daemon -u $USER -g $GROUP --name radarr --start \
+    -m -b --pidfile $PID_FILE --exec $BINNAME -- -p "${SETTINGS_DB}" -g "${GOOGLE_DRIVE_DB}"
+  eend $?
+}
+
+stop() {
+  ebegin "Stopping calibre-web"
+  start-stop-daemon -u $USER -g $GROUP --name radarr --stop \
+    --pidfile $PID_FILE --exec $DAEMON -- $EXENAME
+  eend $?
+}

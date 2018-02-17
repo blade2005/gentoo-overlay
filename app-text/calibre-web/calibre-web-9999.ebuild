@@ -58,13 +58,11 @@ src_install() {
 
 	insinto /etc/${PN}
 	insopts -m0660 -o ${PN} -g ${PN}
+	doins babel.cfg
 
-	insinto /etc/logrotate.d
-	insopts -m0644 -o root -g root
+	#insinto /etc/logrotate.d
+	#insopts -m0644 -o root -g root
 	#newins "${FILESDIR}/${PN}.logrotate" ${PN}
-
-	insinto "/usr/share/"
-	doins -r "${S}"
 
 	python_foreach_impl python_fix_shebang cps.py
 	python_foreach_impl python_newscript cps.py ${PN}
