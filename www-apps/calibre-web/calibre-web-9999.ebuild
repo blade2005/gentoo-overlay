@@ -43,8 +43,11 @@ pkg_setup() {
 	enewuser ${PN} -1 -1 /var/lib/${PN} ${PN}
 }
 
-src_install() {
+src_prepare() {
 	cp -v "${FILESDIR}/setup.py" ${S}
+}
+
+src_install() {
 	python_foreach_impl python_domodule cps
 
 	newconfd "${FILESDIR}/${PN}.conf" ${PN}
