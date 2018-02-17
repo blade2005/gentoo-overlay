@@ -4,9 +4,11 @@
 
 EAPI=6
 
-inherit eutils user git-r3 python-utils distutils-r1
+PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
 
-PYTHON_COMPAT=( python2_7 python3_{4,5,6} pypy )
+inherit eutils user git-r3 distutils-r1
+
+
 EGIT_REPO_URI="https://github.com/janeczku/calibre-web.git"
 
 DESCRIPTION="Web app for browsing, reading and downloading eBooks stored in a Calibre database"
@@ -16,20 +18,20 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 DEPEND="
-	dev-python/setuptools
-	dev-python/Babel>=1.3
-	dev-python/flask-babel==0.11.1
-	dev-python/flask-login>=0.3.2
-	dev-python/flask-principal>=0.3.2
-	dev-python/flask>=0.11
-	dev-python/iso_639>=0.4.5
-	dev-python/PyPDF2==1.26.0
-	dev-python/pytz>=2016.10
-	dev-python/requests>=2.11.1
-	dev-python/sqlalchemy>=0.8.4
-	www-servers/tornado>=4.1
-	dev-python/unidecode>=0.04.19
-	dev-python/wand>=0.4.4
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	>=dev-python/Babel-1.3[${PYTHON_USEDEP}]
+	~dev-python/flask-babel-0.11.1[${PYTHON_USEDEP}]
+	>=dev-python/flask-login-0.3.2[${PYTHON_USEDEP}]
+	>=dev-python/flask-principal-0.3.2[${PYTHON_USEDEP}]
+	>=dev-python/flask-0.11[${PYTHON_USEDEP}]
+	>=dev-python/iso_639-0.4.5[${PYTHON_USEDEP}]
+	~dev-python/PyPDF2-1.26.0[${PYTHON_USEDEP}]
+	>=dev-python/pytz-2016.10[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.11.1[${PYTHON_USEDEP}]
+	>=dev-python/sqlalchemy-0.8.4[${PYTHON_USEDEP}]
+	>=www-servers/tornado-4.1[${PYTHON_USEDEP}]
+	>=dev-python/unidecode-0.04.19[${PYTHON_USEDEP}]
+	>=dev-python/wand-0.4.4[${PYTHON_USEDEP}]
 "
 
 #MY_PN=""
