@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/Babel-1.3[${PYTHON_USEDEP}]
-	=dev-python/flask-babel-0.11.1[${PYTHON_USEDEP}]
+	>=dev-python/flask-babel-0.11.1[${PYTHON_USEDEP}]
 	>=dev-python/flask-login-0.3.2[${PYTHON_USEDEP}]
 	>=dev-python/flask-principal-0.3.2[${PYTHON_USEDEP}]
 	>=dev-python/flask-0.11[${PYTHON_USEDEP}]
