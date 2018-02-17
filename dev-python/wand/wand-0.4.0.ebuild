@@ -7,9 +7,12 @@ PYTHON_COMPAT=( python{2_6,2_7,3_3,3_4} )
 
 inherit distutils-r1
 
+MY_PN="Wand"
+MY_P="${MY_PN}-${PV}"
+
 DESCRIPTION="The ctypes-based simple ImageMagick binding for Python"
 HOMEPAGE="http://wand-py.org/"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
