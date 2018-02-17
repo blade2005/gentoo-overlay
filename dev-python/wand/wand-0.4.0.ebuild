@@ -9,7 +9,7 @@ inherit distutils-r1
 
 DESCRIPTION="The ctypes-based simple ImageMagick binding for Python"
 HOMEPAGE="http://wand-py.org/"
-SRC_URI="mirror://pypi/Wand/Wand/Wand-${PV}.tar.gz"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
